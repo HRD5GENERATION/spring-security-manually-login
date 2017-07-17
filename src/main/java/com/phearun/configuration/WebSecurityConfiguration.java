@@ -18,7 +18,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.loginPage("/login").permitAll();
 		
 		http.authorizeRequests()
-			.antMatchers("/process-login").permitAll()
 			.antMatchers("/admin/**").hasAnyRole("ADMIN")
 			.antMatchers("/user/**").hasAnyRole("USER");
 	}
